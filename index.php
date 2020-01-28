@@ -2,28 +2,27 @@
 
 require_once 'db_connection.php'
 
-$stmt = $pdo->prepare('SELECT title FROM books');
-$stmt -> execute();
-
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
 </head>
-    <body>
-    <?php
 
+<body>
+
+<?php
 while ($row = $stmt->fetch())
 {
-    echo $row['name'] . "\n";
+     echo $row['title'] . "<br>";
+     echo $row['release_date'] . "<br>";
 }
 
-    ?>
-    </body>
+?>
+
+</body>
 </html>
